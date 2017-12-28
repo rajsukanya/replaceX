@@ -7,7 +7,7 @@ void replaceX(string s)
   int g,i;
   string stack[10];
  
-  g = s.find("X");
+  g = s.find("X")
 
 }
 
