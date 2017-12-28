@@ -6,8 +6,11 @@ void replaceX(string s)
 {
   int g,i;
   string stack[10];
+
+  cout << "inside replaceX...\n";
  
-  g = s.find("X")
+  g = s.find("X");
+  cout << "found an X at position: " << g << "\n";
 
 }
 
