@@ -12,6 +12,12 @@ void replaceX(string s)
   g = s.find("X");
   cout << "found an X at position: " << g << "\n";
 
+  for(i=0; i<s.length(); i++)
+  {
+    if(stack[i]=='X')
+      stack[i]='1';  //I'm trying to replace X with 1 but I'm not sure how.   
+  }
+  cout << stack[i];
 }
 
 int main ()
