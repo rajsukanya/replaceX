@@ -18,13 +18,7 @@ void replaceX(string s)
     s.replace(n, 1, 1, '1');
   }
 
-  if((n = s.find_last_of("X")) != std::string::npos)
-  {
-    s.replace(n, 1, 1, '0');
-    cout << s << "/" <<endl;
-    s.replace(n, 1, 1, '1');
-  }
-   cout << s << "*" <<endl;
+  cout << s << "*" <<endl;
 }
 
 int main ()
