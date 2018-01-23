@@ -19,7 +19,7 @@ vector<string> replaceX(string s)
     temp.pop();
     g = t.find("X");
 
-    if(g = -1)
+    if(g == -1)
     {
       resultsList.push_back(t);
     }
