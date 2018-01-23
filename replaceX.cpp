@@ -1,38 +1,57 @@
 #include <iostream>
 #include <string>
+#include <stack>
+#include <vector>
 using namespace std;
 
-void replaceX(string s)
+vector<string> replaceX(string s)
 {
-  int g,i;
-  string stack[10];
+  int g;
+  string s1, s2;
+  stack<string> temp;
+  vector<string> resultsList;
 
-  g = s.find("X");
-  cout << "found an X at position: " << g << "\n";
+  temp.push(s);
   
-  std::string::size_type n = 0;
-  if((n = s.find("X")) != std::string::npos)
+  while(! temp.empty())
   {
-    s.replace(n, 1, 1, '0');
-    cout << s <<endl;
-    s.replace(n, 1, 1, '1');
-  }
+    string t = temp.top();
+    temp.pop();
+    g = t.find("X");
 
-  cout << s << "*" <<endl;
+    if(g = -1)
+    {
+      resultsList.push_back(t);
+    }
+    else
+    {  
+      string  s1(t);
+      string  s2(t);
+
+      s1[g] = '0';
+      s2[g] = '1';
+      temp.push(s1);
+      temp.push(s2);  
+    }
+  }
+  return resultsList;
 }
 
 int main ()
 {
-  string s1, s2, s3;
+  string s;
+  vector<string>u;
+  vector<string>::iterator v;
+  
+  cout << "Enter a string: ";
+  cin >> s;
 
-  s1 = "1000";
-  s2 = "1X00";
-  s3 = "1X00X";
+  u = replaceX(s);
 
-  replaceX(s1);
-  replaceX(s2);
-  replaceX(s3);
+  for(v = u.begin(); v != u.end(); v++)
+  {
+    cout << *v << " ";
+  }
+  cout <<endl;
 
 }
-
-
